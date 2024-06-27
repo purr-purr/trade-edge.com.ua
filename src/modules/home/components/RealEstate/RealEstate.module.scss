@@ -1,0 +1,90 @@
+.container {
+	margin-bottom: 160px;
+
+	@include media($mobile-bp) {
+		margin-bottom: 100px;
+	}
+}
+
+.inner {
+	@include flex(center);
+
+	@include media($mobile-bp) {
+		flex-direction: column;
+		align-items: baseline;
+	}
+}
+
+.info {
+	max-width: var(--aside-width);
+	width: 100%;
+	@include flex($justify: space-between);
+	flex-direction: column;
+
+	@include media($mobile-bp) {
+		max-width: unset;
+	}
+
+	&Title {
+		font-size: 22px;
+		font-weight: 700;
+		margin-bottom: 24px;
+
+		@include media($mobile-bp) {
+			font-size: 16px;
+			margin-bottom: 16px;
+		}
+	}
+
+	&SubTitle {
+		font-size: 16px;
+		font-weight: 700;
+		margin-bottom: 8px;
+
+		@include media($mobile-bp) {
+			font-size: 14px;
+			margin-bottom: 4px;
+		}
+	}
+}
+
+.benefits {
+	list-style-type: none;
+	margin-bottom: 60px;
+
+	@include media($mobile-bp) {
+		margin-bottom: 24px;
+	}
+
+	&Item {
+		@include flex(center);
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+
+		img {
+			margin-right: 4px;
+			width: 18px;
+			height: 18px;
+		}
+	}
+}
+
+.communications {
+	padding-left: 20px;
+}
+
+.poster {
+	flex-grow: 1;
+
+	@include media($mobile-bp) {
+		margin-top: 24px;
+	}
+
+	&Image {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+}

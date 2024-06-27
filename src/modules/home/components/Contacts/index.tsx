@@ -2,13 +2,9 @@ import Link from 'next/link';
 
 import BlockTitle from '@modules/common/components/BlockTitle';
 
-import {
-	COMPANY_ADDRESS,
-	COMPANY_EMAIL,
-	COMPANY_MAP_LINK,
-	COMPANY_PHONE,
-} from '@utils/const';
+import {COMPANY_EMAIL, COMPANY_MAP_LINK, COMPANY_PHONE,} from '@utils/const';
 
+import {useI18n} from '@/i18n/hooks/useI18n';
 import s from './Contacts.module.scss';
 
 interface IContactItem {
@@ -18,44 +14,46 @@ interface IContactItem {
 }
 
 const Contacts = () => {
+	const {t} = useI18n();
+
 	const contactsList: IContactItem[] = [
 		{
-			title: 'Адреса',
-			desc: COMPANY_ADDRESS,
+			title: 'LEGAL_PERSON',
+			desc: 'LIMITED_LIABILITY_COMPANY',
 		},
 		{
-			title: 'Електронна Пошта',
-			desc: COMPANY_EMAIL,
-			link: `mailto:${COMPANY_EMAIL}`,
-		},
-		{
-			title: 'Телефон',
+			title: 'PHONE',
 			desc: COMPANY_PHONE,
 			link: `tel:${COMPANY_PHONE}`,
 		},
 		{
-			title: 'Години Роботи',
-			desc: `ПН-ПТ з 9:00 до 19:00.\nОбідня перерва з 13:00 до 14:00`,
+			title: 'ADDRESS',
+			desc: 'REAL_ADDRESS',
+		},
+		{
+			title: 'EMAIL',
+			desc: COMPANY_EMAIL,
+			link: `mailto:${COMPANY_EMAIL}`,
 		},
 	];
 
 	return (
 		<section className={s.container} id="contacts">
-			<BlockTitle title="Контактна інформація" />
-
+			<BlockTitle
+				title={t('CONTACTS.TITLE')}
+				subTitle={`03 ${t('CONTACTS.SUB_TITLE')}`}
+			/>
 			<ul className={s.contacts}>
 				{contactsList.map((item) => (
 					<li key={item.title} className={s.contactsInner}>
 						<dl>
-							<dt>{item.title}</dt>
+							<dt>{t(`CONTACTS.${item.title}`)}</dt>
 							<dd>
 								{item.link ? (
 									<Link href={item.link} target="_blank">
 										{item.desc}
 									</Link>
-								) : (
-									item.desc
-								)}
+								) : t(`CONTACTS.${item.desc}`)}
 							</dd>
 						</dl>
 					</li>

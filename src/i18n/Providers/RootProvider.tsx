@@ -1,15 +1,16 @@
 import I18nProvider from 'next-translate/I18nProvider';
-import { PropsWithChildren } from 'react';
-import { useRouter } from 'next/router';
+import {PropsWithChildren} from 'react';
+import {useRouter} from 'next/router';
 
-import { LanguageWrapper } from '@/i18n/wrappers/LanguageWrapper';
-import { getLanguageFile } from '@/i18n/utils/language.util';
+import {LanguageWrapper} from '@/i18n/wrappers/LanguageWrapper';
+import {getLanguageFile} from '@/i18n/utils/language.util';
 
-import { i18nConfig } from '../../../i18n';
+import {i18nConfig} from '@root/i18n';
 
-import { Locale } from '@/i18n/types/i18n.type';
+import {Locale} from '@/i18n/types/i18n.type';
 
-interface IRootProvider extends PropsWithChildren {}
+interface IRootProvider extends PropsWithChildren {
+}
 
 /**
  * RootProvider component.
@@ -22,7 +23,7 @@ interface IRootProvider extends PropsWithChildren {}
  * @param props.children - The children components to be wrapped.
  * @returns The wrapped children components.
  */
-export const RootProvider = ({ children }: IRootProvider) => {
+export const RootProvider = ({children}: IRootProvider) => {
 	const router = useRouter();
 
 	const lang = i18nConfig.locales.includes(router.query.locale as Locale)

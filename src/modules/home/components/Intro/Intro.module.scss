@@ -1,2 +1,143 @@
 .container {
+	margin-block: 157px 200px;
+	@include pseudo() {
+		width: 100vw;
+		height: 1004px;
+		top: -300px;
+		left: calc((100% - 100vw) / 2);
+		background: url("../../assets/pattern1.svg") no-repeat;
+		background-size: cover;
+
+		@include media($mobile-bp) {
+			height: 400px;
+			top: -40px;
+		}
+	}
+
+	@include media($mobile-bp) {
+		margin-block: 80px 100px;
+	}
+}
+
+.title {
+	width: 100%;
+	height: auto;
+	margin-block-end: 50px;
+
+	@include media($mobile-bp) {
+		margin-block-end: 24px;
+	}
+}
+
+.inner {
+	@include flex(stretch);
+
+	@include media($mobile-bp) {
+		flex-direction: column;
+		gap: 24px;
+	}
+}
+
+.keyWords {
+	@include flex($align: center, $gap: 8px);
+	flex-wrap: wrap;
+	list-style-type: none;
+
+	li {
+		padding: 10px 20px;
+		border: 1px solid var(--white);
+		border-radius: 30px;
+		font-size: 14px;
+
+		@include media($mobile-bp) {
+			padding: 7px 12px;
+			border-radius: 20px;
+			font-size: 12px;
+		}
+	}
+}
+
+.info {
+	max-width: var(--aside-width);
+	width: 100%;
+	@include flex($justify: space-between);
+	flex-direction: column;
+	padding-right: 24px;
+
+	@include media($mobile-bp) {
+		max-width: unset;
+		gap: 16px;
+		padding-right: unset;
+	}
+
+	&Description {
+		max-width: 342px;
+		width: 100%;
+		font-weight: 300;
+	}
+}
+
+.poster {
+	position: relative;
+	flex-grow: 1;
+
+	&Image {
+		width: 100%;
+		height: auto;
+	}
+
+	&Text {
+		position: absolute;
+		right: 24px;
+		bottom: 24px;
+		padding: 15px 24px;
+		max-width: 349px;
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.24);
+		border-radius: 8px;
+		box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+		backdrop-filter: blur(14px);
+
+		@include media($mobile-bp) {
+			right: auto;
+			left: 0;
+			bottom: 16px;
+			padding: 10px 16px;
+			border-bottom-left-radius: 0;
+			border-top-left-radius: 0;
+		}
+
+		p {
+			font-size: 14px;
+
+			@include media($mobile-bp) {
+				font-size: 12px;
+			}
+		}
+
+		p:first-child {
+			font-weight: 600;
+			margin-bottom: 8px;
+
+			@include media($mobile-bp) {
+				margin-bottom: 4px;
+			}
+		}
+
+		p:last-child {
+			@include flex($align: center, $gap: 2px);
+
+			img {
+				display: block;
+				width: 16px;
+				height: 16px;
+			}
+		}
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
 }

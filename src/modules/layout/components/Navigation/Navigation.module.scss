@@ -1,5 +1,5 @@
 .container {
-	@include flex($align: center, $gap: 40px);
+	@include flex($align: center, $gap: 50px);
 	list-style-type: none;
 
 	@include media($laptop-bp) {
@@ -9,10 +9,10 @@
 	&.active {
 		display: block;
 		position: absolute;
-		width: calc(100% + 40px);
+		width: calc(100% + 80px);
 		height: 100vh;
 		background-color: var(--main-bg);
-		left: -20px;
+		left: -40px;
 		top: 0;
 		padding-top: 80px;
 		padding-left: 40px;
@@ -28,15 +28,15 @@
 	all: unset;
 	cursor: pointer;
 	font-size: 14px;
-	font-weight: 700;
-	color: var(--bold-text);
+	font-weight: 400;
+	color: var(--white);
 
 	@include pseudo(after) {
 		right: 0;
 		bottom: -4px;
 		width: 0;
 		height: 1px;
-		background-color: var(--bold-text);
+		background-color: var(--white);
 		transition: width 0.3s ease-in-out;
 	}
 
@@ -52,7 +52,7 @@
 
 	&:hover,
 	&.active {
-		color: var(--bold-text);
+		color: var(--white);
 
 		&:after {
 			width: 100%;

@@ -1,11 +1,9 @@
 @import 'mixins';
 
 :root {
-	--main-bg: #1a1a1a;
-	--primary: #0016e0;
-	--main-text: #adb2b1;
-	--bold-text: #fff;
+	--main-bg: #161616;
 	--white: #fff;
+	--aside-width: 45%;
 }
 
 * {
@@ -24,7 +22,7 @@
 	}
 
 	&::-webkit-scrollbar-thumb {
-		background-color: var(--primary);
+		background-color: var(--white);
 		border-radius: 50px;
 	}
 
@@ -46,7 +44,7 @@ html {
 }
 
 body {
-	color: var(--main-text);
+	color: var(--white);
 }
 
 body,
@@ -56,7 +54,7 @@ button {
 
 a {
 	scroll-margin-top: 100px;
-	color: var(--bold-text);
+	color: var(--white);
 	text-decoration: underline;
 	transition: opacity 0.3s ease-in-out;
 

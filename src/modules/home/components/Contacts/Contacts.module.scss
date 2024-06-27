@@ -1,8 +1,8 @@
 .container {
-	margin-bottom: 75px;
+	margin-bottom: 30px;
 
 	@include media($mobile-bp) {
-		margin-bottom: 35px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -16,6 +16,7 @@
 
 	@include media($mobile-bp) {
 		height: 300px;
+		border-radius: 20px;
 	}
 
 	&:hover {
@@ -31,18 +32,22 @@
 }
 
 .contacts {
-	@include flex(flex-start, space-evenly, 24px);
+	@include flex($gap: 40px);
 	flex-wrap: wrap;
 	list-style-type: none;
-	margin-block: 48px;
+	margin-block-end: 40px;
+	max-width: calc(100% - var(--aside-width));
+	width: 100%;
+	margin-left: auto;
 
 	@include media($mobile-bp) {
-		margin-block: 24px;
+		margin-block-end: 24px;
+		max-width: unset;
+		gap: 16px;
 	}
 
 	&Inner {
-		@include flex($align: center, $gap: 16px);
-		max-width: 338px;
+		max-width: 375px;
 		width: 100%;
 
 		@include media($mobile-bp) {
@@ -50,12 +55,23 @@
 		}
 
 		& dt {
-			font-weight: 600;
-			color: var(--bold-text);
+			font-weight: 700;
+			color: var(--white);
+			margin-bottom: 8px;
+
+			@include media($mobile-bp) {
+				font-size: 16px;
+				margin-bottom: 4px;
+			}
 		}
 
 		& dd {
+			font-weight: 300;
 			white-space: break-spaces;
+
+			@include media($mobile-bp) {
+				font-size: 14px;
+			}
 
 			a {
 				text-decoration: none;

@@ -1,11 +1,11 @@
-import { ReactNode, useEffect, useMemo, useState } from 'react';
-import { useRouter } from 'next/router';
+import {ReactNode, useEffect, useMemo, useState} from 'react';
+import {useRouter} from 'next/router';
 
-import { languageDetector } from '@/i18n/lib/languageDetector';
+import {languageDetector} from '@/i18n/lib/languageDetector';
 
-import { i18nConfig } from '@root/i18n';
+import {i18nConfig} from '@root/i18n';
 
-import { Locale } from '@/i18n/types/i18n.type';
+import {Locale} from '@/i18n/types/i18n.type';
 
 interface LanguageWrapperProps {
 	children: ReactNode;
@@ -26,8 +26,8 @@ interface LanguageWrapperProps {
  * </LanguageWrapper>
  * ```
  */
-export const LanguageWrapper = ({ children }: LanguageWrapperProps) => {
-	const [detectedLng, setDetectedLng] = useState('ua');
+export const LanguageWrapper = ({children}: LanguageWrapperProps) => {
+	const [detectedLng, setDetectedLng] = useState('');
 	const router = useRouter();
 
 	// Check if current path includes locale
@@ -50,7 +50,7 @@ export const LanguageWrapper = ({ children }: LanguageWrapperProps) => {
 	// handle redirection
 	useEffect(() => {
 		const {
-			query: { locale },
+			query: {locale},
 			asPath,
 			isReady,
 		} = router;
@@ -59,8 +59,8 @@ export const LanguageWrapper = ({ children }: LanguageWrapperProps) => {
 		if (isReady && !i18nConfig.locales.includes(locale as Locale)) {
 			if (asPath.startsWith('/' + detectedLng) && router.route === '/404') {
 				// router.push({
-				//   pathname: "/404",
-				//   query: { locale },
+				// 	pathname: "/404",
+				// 	query: {locale},
 				// });
 				return;
 			}

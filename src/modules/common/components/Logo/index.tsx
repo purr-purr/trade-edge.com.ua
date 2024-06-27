@@ -1,15 +1,15 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { FC } from 'react';
 
-import { COMPANY_NAME } from '@utils/const';
+import LOGO from '@public/assets/logo.svg';
 
 import s from './Logo.module.scss';
 
 const Logo: FC = () => {
 	return (
 		<Link href="/" className={s.container}>
-			{COMPANY_NAME[0]}
-			<span>{COMPANY_NAME[1]}</span>
+			<Image src={LOGO} alt="Logo" />
 		</Link>
 	);
 };

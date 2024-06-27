@@ -4,8 +4,14 @@ import s from './BlockTitle.module.scss';
 
 const BlockTitle: FC<{
 	title: string;
-}> = ({ title }) => {
-	return <h2 className={s.container}>{title}</h2>;
+	subTitle: string;
+}> = ({ title, subTitle }) => {
+	return (
+		<article className={s.container}>
+			<h3 className={s.subTitle}>{subTitle}</h3>
+			<h2 className={s.title}>{title}</h2>
+		</article>
+	);
 };
 
 export default BlockTitle;

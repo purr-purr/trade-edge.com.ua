@@ -1,6 +1,6 @@
-import { Head, Html, Main, NextScript } from 'next/document';
+import {Head, Html, Main, NextScript} from 'next/document';
 
-import { i18nConfig } from '../../i18n';
+import {i18nConfig} from '@root/i18n';
 
 export default function Document(props: any) {
 	const currentLocale =
@@ -8,22 +8,10 @@ export default function Document(props: any) {
 
 	return (
 		<Html lang={currentLocale}>
-			<Head>
-				<link rel="preconnect" href="https://fonts.googleapis.com"/>
-				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
-					crossOrigin="anonymous"
-				/>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-					rel="stylesheet"
-				/>
-				<meta name="robots" content="noindex"/>
-			</Head>
+			<Head/>
 			<body>
-				<Main />
-				<NextScript />
+			<Main/>
+			<NextScript/>
 			</body>
 		</Html>
 	);

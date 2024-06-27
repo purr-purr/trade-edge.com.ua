@@ -1,6 +1,6 @@
 import nextLanguageDetector from 'next-language-detector';
 
-import { i18nConfig } from '../../../i18n';
+import { i18nConfig } from '@root/i18n';
 
 export const languageDetector = nextLanguageDetector({
 	supportedLngs: i18nConfig.locales,
