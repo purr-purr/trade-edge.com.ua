@@ -3,8 +3,8 @@ import {useRouter} from 'next/router';
 
 import {i18nConfig} from '@root/i18n';
 
+import {languageDetector} from '@/i18n/lib/languageDetector';
 import {Locale} from '@/i18n/types/i18n.type';
-import {languageDetector} from "@/i18n/lib/languageDetector";
 
 interface LanguageWrapperProps {
 	children: ReactNode;
@@ -26,8 +26,8 @@ interface LanguageWrapperProps {
  * ```
  */
 export const LanguageWrapper = ({children}: LanguageWrapperProps) => {
-	const [detectedLng, setDetectedLng] = useState('ua');
 	const router = useRouter();
+	const [detectedLng, setDetectedLng] = useState<string>('');
 
 	// Check if current path includes locale
 	const isLocaleInThePath = useMemo(
@@ -67,8 +67,10 @@ export const LanguageWrapper = ({children}: LanguageWrapperProps) => {
 			if (detectedLng && languageDetector.cache) {
 				languageDetector.cache(detectedLng);
 			}
-			router.replace('/' + detectedLng + asPath);
+			router.replace('/' + detectedLng);
+			// router.replace('/' + detectedLng + asPath);
 		}
+
 	}, [router, detectedLng]);
 
 	return isLocaleInThePath ? <>{children}</> : <p>Loading...</p>;

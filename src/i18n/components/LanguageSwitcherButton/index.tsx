@@ -1,9 +1,9 @@
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import {languageDetector} from '@/i18n/lib/languageDetector';
-import cn from "classnames";
-import s from "./LanguageSwitcherButton.module.scss";
+import { languageDetector } from '@/i18n/lib/languageDetector';
+import s from './LanguageSwitcherButton.module.scss';
+import cn from 'classnames';
 
 interface LanguageSwitcherProps {
 	locale: string;
@@ -19,9 +19,9 @@ interface LanguageSwitcherProps {
  */
 
 export const LanguageSwitcherButton = ({
-	                                       locale,
-	                                       ...rest
-                                       }: LanguageSwitcherProps) => {
+	locale,
+	...rest
+}: LanguageSwitcherProps) => {
 	const router = useRouter();
 
 	let href = rest.href || router.asPath;
@@ -40,7 +40,7 @@ export const LanguageSwitcherButton = ({
 	const languageTranslation = {
 		ua: 'укр',
 		en: 'en',
-	}
+	};
 
 	const isActive = router.query.locale === locale;
 
@@ -48,9 +48,7 @@ export const LanguageSwitcherButton = ({
 		<Link
 			className={cn(s.container, isActive && s.active)}
 			href={href}
-			onClick={() =>
-				languageDetector.cache && languageDetector.cache(locale)
-			}
+			onClick={() => languageDetector.cache && languageDetector.cache(locale)}
 			locale={locale}
 		>
 			{languageTranslation[locale as 'ua' | 'en']}

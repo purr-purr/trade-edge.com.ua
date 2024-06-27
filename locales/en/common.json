@@ -1,47 +1,47 @@
 {
-  "COMMON": {
-    "ALL_RIGHTS_RESERVED": "All rights reserved",
-    "WEBSITE_DEVELOPMENT": "Website development"
-  },
-  "INTRO": {
-    "CREATING_COZY_PLACES": "We create cozy places for rest and permanent residence. Enjoy the nature, comfort and security of a home where every detail is thought out for your pleasure and peace of mind.",
-    "CONTEMPORARY_DESIGN": "Contemporary Design",
-    "COMFORT": "Comfort",
-    "INNOVATIVE_SOLUTIONS": "Innovative Solutions",
-    "INSPIRATION": "Inspiration",
-    "COUNTRY_COMPLEX_FOR_RECREATION": "Country complex for recreation",
-    "KNYAZHYCHI_KYIV_REGION": "Knyazhychi village, Kyiv region"
-  },
-  "ABOUT_US": {
-    "TITLE": "Why you should turn us",
-    "SUB_TITLE": "About the company",
-    "A_TEAM_OF_PROFESSIONALS": "A team of professionals",
-    "OUR_TEAM": "Our team consists of experienced experts who ensure the highest quality of service. You can be sure of our competence and reliability at every stage of cooperation.",
-    "MODERN_MATERIALS_AND_TECHNOLOGIES": "Modern materials and technologies",
-    "WE_USE_MODERN_MATERIALS": "We use modern materials and advanced technologies for durability and comfort.",
-    "INDIVIDUAL_APPROACH": "Individual approach to projects",
-    "WE_ADAPT_PROJECTS_TO_YOUR_NEEDS": "We adapt projects to your needs, providing personalized solutions."
-  },
-  "REAL_ESTATE": {
-    "TITLE": "Find the perfect property",
-    "SUB_TITLE": "Real Estate",
-    "COUNTRY_COMPLEX_FOR_RECREATION": "Country complex for recreation",
-    "COTTAGES_WITH_AN_AREA_OF": "Cottages with an area from 50m2 to 150m2",
-    "CLASS_COMFORT": "Class: comfort",
-    "PUTTING_INTO_OPERATION": "Putting into operation: IV quarter of 2026",
-    "ENGINEERING_COMMUNICATIONS": "Engineering communications:",
-    "WATER_SUPPLY": "Water supply - local, Bore - no",
-    "VEIN": "power supply through a substation with a power transformer - no",
-    "ACCESS_ROADS": "access roads - asphalt road"
-  },
-  "CONTACTS": {
-    "TITLE": "Sales center",
-    "SUB_TITLE": "Contacts",
-    "LEGAL_PERSON": "Legal person",
-    "PHONE": "Phone",
-    "ADDRESS": "Address",
-    "EMAIL": "E-mail",
-    "LIMITED_LIABILITY_COMPANY": "Limited Liability Company \"Trade Edge\" EDRPOU: 45246379",
-    "REAL_ADDRESS": "Ukraine, 04080, Kyiv, 82 Kyrylivska St., office 256"
-  }
+	"COMMON": {
+		"ALL_RIGHTS_RESERVED": "All rights reserved",
+		"WEBSITE_DEVELOPMENT": "Website development"
+	},
+	"INTRO": {
+		"CREATING_COZY_PLACES": "We create cozy places for rest and permanent residence. Enjoy the nature, comfort and security of a home where every detail is thought out for your pleasure and peace of mind.",
+		"CONTEMPORARY_DESIGN": "Contemporary Design",
+		"COMFORT": "Comfort",
+		"INNOVATIVE_SOLUTIONS": "Innovative Solutions",
+		"INSPIRATION": "Inspiration",
+		"COUNTRY_COMPLEX_FOR_RECREATION": "Country complex for recreation",
+		"KNYAZHYCHI_KYIV_REGION": "Knyazhychi village, Kyiv region"
+	},
+	"ABOUT_US": {
+		"TITLE": "Why you should turn us",
+		"SUB_TITLE": "About the company",
+		"A_TEAM_OF_PROFESSIONALS": "A team of professionals",
+		"OUR_TEAM": "Our team consists of experienced experts who ensure the highest quality of service. You can be sure of our competence and reliability at every stage of cooperation.",
+		"MODERN_MATERIALS_AND_TECHNOLOGIES": "Modern materials and technologies",
+		"WE_USE_MODERN_MATERIALS": "We use modern materials and advanced technologies for durability and comfort.",
+		"INDIVIDUAL_APPROACH": "Individual approach to projects",
+		"WE_ADAPT_PROJECTS_TO_YOUR_NEEDS": "We adapt projects to your needs, providing personalized solutions."
+	},
+	"REAL_ESTATE": {
+		"TITLE": "Find the perfect property",
+		"SUB_TITLE": "Real Estate",
+		"COUNTRY_COMPLEX_FOR_RECREATION": "Country complex for recreation",
+		"COTTAGES_WITH_AN_AREA_OF": "Cottages with an area from 50m2 to 150m2",
+		"CLASS_COMFORT": "Class: comfort",
+		"PUTTING_INTO_OPERATION": "Putting into operation: IV quarter of 2026",
+		"ENGINEERING_COMMUNICATIONS": "Engineering communications:",
+		"WATER_SUPPLY": "water supply - local, Bore - no",
+		"VEIN": "power supply through a substation with a power transformer - no",
+		"ACCESS_ROADS": "access roads - asphalt road"
+	},
+	"CONTACTS": {
+		"TITLE": "Sales center",
+		"SUB_TITLE": "Contacts",
+		"LEGAL_PERSON": "Legal person",
+		"PHONE": "Phone",
+		"ADDRESS": "Address",
+		"EMAIL": "E-mail",
+		"LIMITED_LIABILITY_COMPANY": "Limited Liability Company \"Trade Edge\" EDRPOU: 45246379",
+		"REAL_ADDRESS": "Ukraine, 04080, Kyiv, 82 Kyrylivska St., office 256"
+	}
 }

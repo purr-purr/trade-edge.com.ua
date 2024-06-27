@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import {useRouter} from 'next/router';
+import {useEffect} from 'react';
 
-import { languageDetector } from './languageDetector';
+import {languageDetector} from './languageDetector';
 
 /**
  * Custom hook that redirects the user to a specified path or the current path with the detected language.
@@ -16,16 +16,21 @@ export const useRedirect = (to?: string) => {
 	// language detection
 	useEffect(() => {
 		const detectedLng = languageDetector.detect();
+
 		if (redirectPath.startsWith('/' + detectedLng) && router.route === '/404') {
 			// prevent endless loop
-			router.replace('/' + detectedLng + router.route);
+			router.replace('/' + router.route);
+			// router.replace('/' + detectedLng + router.route);
 			return;
 		}
 
 		if (detectedLng && languageDetector.cache) {
 			languageDetector.cache(detectedLng);
 		}
-		router.replace('/' + detectedLng + redirectPath);
+
+
+		router.replace('/' + redirectPath);
+		// router.replace('/' + detectedLng + redirectPath);
 	});
 
 	return <></>;

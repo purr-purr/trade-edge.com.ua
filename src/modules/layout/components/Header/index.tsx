@@ -1,14 +1,14 @@
-import {HeaderContextWrapper} from '@modules/layout/context/HeaderContext';
+import { HeaderContextWrapper } from '@modules/layout/context/HeaderContext';
 import NavigationButton from '@modules/layout/components/NavigationButton';
+import { LAPTOP_BREAKPOINT, MOBILE_BREAKPOINT } from '@utils/const';
 import Navigation from '@modules/layout/components/Navigation';
 import Logo from '@modules/common/components/Logo';
-import {LAPTOP_BREAKPOINT, MOBILE_BREAKPOINT} from '@utils/const';
 import s from './Header.module.scss';
 
-import {useMediaQuery} from '@modules/common/hooks';
-import {useEffect, useState} from "react";
-import cn from "classnames";
-import LanguageSwitcher from "@/i18n/components/LanguageSwitcher";
+import LanguageSwitcher from '@/i18n/components/LanguageSwitcher';
+import { useMediaQuery } from '@modules/common/hooks';
+import { useEffect, useState } from 'react';
+import cn from 'classnames';
 
 const Header = () => {
 	const isLaptop = useMediaQuery(LAPTOP_BREAKPOINT);
@@ -29,12 +29,12 @@ const Header = () => {
 
 	return (
 		<header className={cn(s.container, scrollTop > scrollTopGap && s.active)}>
-			<Logo/>
+			<Logo />
 
 			<HeaderContextWrapper>
-				<LanguageSwitcher/>
-				<Navigation/>
-				{isLaptop && <NavigationButton/>}
+				<LanguageSwitcher />
+				<Navigation />
+				{isLaptop && <NavigationButton />}
 			</HeaderContextWrapper>
 		</header>
 	);

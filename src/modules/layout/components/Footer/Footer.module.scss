@@ -2,6 +2,7 @@
 	@include flex($justify: space-between);
 	padding-top: 25px;
 	padding-bottom: 55px;
+	margin-top: auto;
 
 	@include media($mobile-bp) {
 		padding-bottom: 35px;

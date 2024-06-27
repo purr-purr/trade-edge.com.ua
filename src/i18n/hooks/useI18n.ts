@@ -1,6 +1,6 @@
 import useTranslation from 'next-translate/useTranslation';
 
-import { i18nConfig } from '../../../i18n';
+import {i18nConfig} from '@root/i18n';
 
 interface IUseI18n {
 	namespace?: string;
@@ -14,8 +14,8 @@ interface IUseI18n {
  * @param options.namespace - The namespace for the translation function.
  * @returns An object containing the translation function.
  */
-export const useI18n = ({ namespace }: IUseI18n = {}) => {
-	const { t } = useTranslation(namespace ? namespace : i18nConfig.defaultNS);
+export const useI18n = ({namespace}: IUseI18n = {}) => {
+	const {t} = useTranslation(namespace ? namespace : i18nConfig.defaultNS);
 
-	return { t };
+	return {t};
 };

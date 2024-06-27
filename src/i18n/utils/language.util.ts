@@ -1,5 +1,5 @@
-import commonEN from '../../../locales/en/common.json';
-import commonUA from '../../../locales/ua/common.json';
+import commonEN from '@root/locales/en/common.json';
+import commonUA from '@root/locales/ua/common.json';
 
 import { Locale } from '@/i18n/types/i18n.type';
 

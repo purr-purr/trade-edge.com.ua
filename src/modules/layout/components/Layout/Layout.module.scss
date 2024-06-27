@@ -4,6 +4,9 @@
 	max-width: 1520px;
 	width: 100%;
 	position: relative;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 
 	@include media($mobile-bp) {
 		padding-inline: 20px;

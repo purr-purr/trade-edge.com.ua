@@ -21,12 +21,9 @@ import {useEffect, useState} from 'react';
 async function getPageList() {
 	if (process.env.NODE_ENV === 'production') {
 		const {sortedPages} = await getClientBuildManifest();
-		console.log(`sortedPages`, sortedPages)
 		return sortedPages;
 	} else {
-		console.log(`else`,)
 		if (typeof window !== 'undefined' && window.__BUILD_MANIFEST?.sortedPages) {
-			console.log(window.__BUILD_MANIFEST.sortedPages);
 			return window.__BUILD_MANIFEST.sortedPages;
 		}
 	}
@@ -83,6 +80,11 @@ const Custom404 = () => {
 
 	const [isNotFound, setIsNotFound] = useState<boolean>(false);
 
+	useEffect(() => {
+		isNotFound && router.replace('/');
+	}, [isNotFound]);
+
+
 	const processLocationAndRedirect = async (router: NextRouter) => {
 		if (doesNeedsProcessing(router)) {
 			const targetIsValidPage = await getDoesLocationMatchPage(router.asPath);
@@ -103,7 +105,7 @@ const Custom404 = () => {
 
 	if (!isNotFound) return null;
 
-	return <h1>Error 404 - Page Not Found</h1>;
+	return <h1>404 - Page Not Found</h1>;
 };
 
 export default Custom404;

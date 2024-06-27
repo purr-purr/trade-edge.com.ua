@@ -1,6 +1,6 @@
-import {Head, Html, Main, NextScript} from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
-import {i18nConfig} from '@root/i18n';
+import { i18nConfig } from '@root/i18n';
 
 export default function Document(props: any) {
 	const currentLocale =
@@ -8,10 +8,10 @@ export default function Document(props: any) {
 
 	return (
 		<Html lang={currentLocale}>
-			<Head/>
+			<Head />
 			<body>
-			<Main/>
-			<NextScript/>
+				<Main />
+				<NextScript />
 			</body>
 		</Html>
 	);

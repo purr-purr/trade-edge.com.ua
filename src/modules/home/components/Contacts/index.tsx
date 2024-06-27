@@ -2,9 +2,10 @@ import Link from 'next/link';
 
 import BlockTitle from '@modules/common/components/BlockTitle';
 
-import {COMPANY_EMAIL, COMPANY_MAP_LINK, COMPANY_PHONE,} from '@utils/const';
+import { COMPANY_EMAIL, COMPANY_MAP_LINK, COMPANY_PHONE } from '@utils/const';
 
-import {useI18n} from '@/i18n/hooks/useI18n';
+import ScrollElement from '@modules/common/components/ScrollElement';
+import { useI18n } from '@/i18n/hooks/useI18n';
 import s from './Contacts.module.scss';
 
 interface IContactItem {
@@ -14,7 +15,7 @@ interface IContactItem {
 }
 
 const Contacts = () => {
-	const {t} = useI18n();
+	const { t } = useI18n();
 
 	const contactsList: IContactItem[] = [
 		{
@@ -38,7 +39,7 @@ const Contacts = () => {
 	];
 
 	return (
-		<section className={s.container} id="contacts">
+		<ScrollElement className={s.container} name="contacts">
 			<BlockTitle
 				title={t('CONTACTS.TITLE')}
 				subTitle={`03 ${t('CONTACTS.SUB_TITLE')}`}
@@ -53,7 +54,9 @@ const Contacts = () => {
 									<Link href={item.link} target="_blank">
 										{item.desc}
 									</Link>
-								) : t(`CONTACTS.${item.desc}`)}
+								) : (
+									t(`CONTACTS.${item.desc}`)
+								)}
 							</dd>
 						</dl>
 					</li>
@@ -69,7 +72,7 @@ const Contacts = () => {
 					referrerPolicy="no-referrer-when-downgrade"
 				/>
 			</div>
-		</section>
+		</ScrollElement>
 	);
 };
 

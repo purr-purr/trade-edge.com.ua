@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
+	trailingSlash: true,
 	reactStrictMode: true,
 	output: 'export',
 	sassOptions: {
@@ -8,22 +9,6 @@ const nextConfig = {
 	},
 	images: {
 		unoptimized: true,
-	},
-	webpack: (config) => {
-		config.module.rules.push({
-			test: /\.pdf$|\.doc$|\.docx$/,
-			use: [
-				{
-					loader: 'file-loader',
-					options: {
-						publicPath: `assets/docs/`,
-						name: '[name].[ext]',
-					},
-				},
-			],
-		});
-		
-		return config;
 	},
 };
 
