@@ -1,5 +1,6 @@
 .container {
 	margin-block: 157px 200px;
+	z-index: 2;
 	@include pseudo() {
 		width: 100vw;
 		height: 1004px;
@@ -7,6 +8,7 @@
 		left: calc((100% - 100vw) / 2);
 		background: url("../../assets/pattern1.svg") no-repeat;
 		background-size: cover;
+		z-index: -1;
 
 		@include media($mobile-bp) {
 			height: 400px;

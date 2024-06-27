@@ -1,10 +1,14 @@
-import { removeTrailingSlash } from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
-import { parseRelativeUrl } from 'next/dist/shared/lib/router/utils/parse-relative-url';
-import { getRouteRegex } from 'next/dist/shared/lib/router/utils/route-regex';
-import { isDynamicRoute } from 'next/dist/shared/lib/router/utils/is-dynamic';
-import { getClientBuildManifest } from 'next/dist/client/route-loader';
-import { NextRouter, useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import {
+	removeTrailingSlash
+} from 'next/dist/shared/lib/router/utils/remove-trailing-slash';
+import {
+	parseRelativeUrl
+} from 'next/dist/shared/lib/router/utils/parse-relative-url';
+import {getRouteRegex} from 'next/dist/shared/lib/router/utils/route-regex';
+import {isDynamicRoute} from 'next/dist/shared/lib/router/utils/is-dynamic';
+import {getClientBuildManifest} from 'next/dist/client/route-loader';
+import {NextRouter, useRouter} from 'next/router';
+import {useEffect, useState} from 'react';
 
 /**
  * Retrieves the list of pages.
@@ -16,9 +20,11 @@ import { useEffect, useState } from 'react';
  */
 async function getPageList() {
 	if (process.env.NODE_ENV === 'production') {
-		const { sortedPages } = await getClientBuildManifest();
+		const {sortedPages} = await getClientBuildManifest();
+		console.log(`sortedPages`, sortedPages)
 		return sortedPages;
 	} else {
+		console.log(`else`,)
 		if (typeof window !== 'undefined' && window.__BUILD_MANIFEST?.sortedPages) {
 			console.log(window.__BUILD_MANIFEST.sortedPages);
 			return window.__BUILD_MANIFEST.sortedPages;
@@ -37,7 +43,7 @@ async function getDoesLocationMatchPage(location: string) {
 	const pages = await getPageList();
 
 	let parsed = parseRelativeUrl(location);
-	let { pathname } = parsed;
+	let {pathname} = parsed;
 	return pathMatchesPage(pathname, pages);
 }
 

@@ -1,11 +1,10 @@
 import {ReactNode, useEffect, useMemo, useState} from 'react';
 import {useRouter} from 'next/router';
 
-import {languageDetector} from '@/i18n/lib/languageDetector';
-
 import {i18nConfig} from '@root/i18n';
 
 import {Locale} from '@/i18n/types/i18n.type';
+import {languageDetector} from "@/i18n/lib/languageDetector";
 
 interface LanguageWrapperProps {
 	children: ReactNode;
@@ -27,7 +26,7 @@ interface LanguageWrapperProps {
  * ```
  */
 export const LanguageWrapper = ({children}: LanguageWrapperProps) => {
-	const [detectedLng, setDetectedLng] = useState('');
+	const [detectedLng, setDetectedLng] = useState('ua');
 	const router = useRouter();
 
 	// Check if current path includes locale

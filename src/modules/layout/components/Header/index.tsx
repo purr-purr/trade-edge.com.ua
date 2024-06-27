@@ -6,9 +6,9 @@ import {LAPTOP_BREAKPOINT, MOBILE_BREAKPOINT} from '@utils/const';
 import s from './Header.module.scss';
 
 import {useMediaQuery} from '@modules/common/hooks';
-import LanguageSwitcher from "@/i18n/components/LanguageSwitcher";
 import {useEffect, useState} from "react";
 import cn from "classnames";
+import LanguageSwitcher from "@/i18n/components/LanguageSwitcher";
 
 const Header = () => {
 	const isLaptop = useMediaQuery(LAPTOP_BREAKPOINT);
